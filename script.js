@@ -1,3 +1,4 @@
+import { createAssistant, createSmartappDebugger, createAssistantClient } from '@salutejs/client';
 import { mathFacts } from './questions.js';
 
 // variables
