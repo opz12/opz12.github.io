@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Math Quiz</title>
+  <link rel="stylesheet" href="/src/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Neucha&family=Rubik:wght@400;700&display=swap"
+    rel="stylesheet" />
+</head>
+
+<div class="modal" id="infoModal" style="display: none;">
+  <div class="modal-content">
+    <span class="close-button" id="closeModalBtn">&times;</span>
+    <h2>Подсказка</h2>
+    <p>Скажите "Начать игру", чтобы запустить новый квиз</p>
+    <p>Скажите "Сложный", "Средний" или "Легкий", для выбора сложности квиза</p>
+    <p>Скажите 1, 2, 3 или 4, чтобы выбрать правильный вариант ответа</p>
+    <p>Скажите "Заново", чтобы повторно начать игру</p>
+  </div>
+</div>
+
+<body>
+  <div class="start_menu" id="startMenu">
+    <div class="logo">
+      <h1>MathQuiz</h1>
+      <div class="subtitle">Прокачай свои математические навыки!</div>
+    </div>
+    <button class="start_btn pulse" id="startBtn">Начать игру</button>
+    <div class="high-score">Рекорд: <span id="highScore">0</span></div>
+  </div>
+
+  <div class="difficulty_menu" id="difficultyMenu" style="display: none;">
+    <h2>Выберите уровень сложности</h2>
+    <div class="difficulty_buttons">
+      <button class="difficulty_btn easy" data-level="easy">
+        <span class="difficulty-name">Лёгкий</span>
+        <span class="difficulty-desc">Простые вопросы на знание математики)</span>
+      </button>
+      <button class="difficulty_btn medium" data-level="medium">
+        <span class="difficulty-name">Средний</span>
+        <span class="difficulty-desc">Вопросы повышенной сложности!</span>
+      </button>
+      <button class="difficulty_btn hard" data-level="hard">
+        <span class="difficulty-name">Сложный</span>
+        <span class="difficulty-desc">Комплексные задачи</span>
+      </button>
+    </div>
+    <button class="back_btn" id="backBtnDifficulty">← Назад</button>
+  </div>
+
+  <div class="quiz_container" id="quizContainer" style="display: none;">
+    <div class="header">
+      <div class="score">Очки: <span id="score">0</span></div>
+      <div class="level">Уровень: <span id="levelDisplay">Лёгкий</span></div>
+      <div class="question-count">Вопрос: <span id="currentQuestion">1</span>/<span id="totalQuestions">10</span></div>
+    </div>
+    <div id="quiz">
+      <div class="question" id="question"></div>
+      <div class="answers" id="answers"></div>
+      <div class="timer-container">
+        <div class="progress-bar" id="progressBar"></div>
+        <div id="timer"><span id="time">10</span> сек</div>
+      </div>
+    </div>
+    <button class="back_btn" tabindex="0" id="backBtn">← Назад в меню</button>
+  </div>
+
+  <div class="results_container" id="resultsContainer" style="display: none;">
+    <h2>Результаты</h2>
+    <div class="final-score">Ваш счет: <span id="finalScore">0</span></div>
+    <div class="rating-stars" id="ratingStars"></div>
+    <div class="stats">
+      <div>Правильных ответов: <span id="correctAnswers">0</span>/<span id="totalAnswers">0</span></div>
+      <div>Среднее время ответа: <span id="avgTime">0</span> сек</div>
+      <div>Бонусы за скорость: <span id="speedBonus">0</span></div>
+    </div>
+    <button class="restart_btn" id="restartBtn">Играть снова</button>
+    <button class="back_btn" id="backBtnResults">← В главное меню</button>
+  </div>
+
+  <div id="command"></div>
+  <script type="module" src="/src/script.js"></script>
+</body>
+
+</html>
